@@ -1,1 +1,1 @@
-# redux-chat-front
+# redux-typescript-react-games
