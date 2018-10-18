@@ -11,6 +11,7 @@ import {
   RoomListComponent
 } from './components';
 import styles from './lobby.styles';
+import { CardContentDTO, QuestionDTO } from '../../api/model';
 
 
 interface LobbyProps extends WithStyles<typeof styles>{
@@ -21,6 +22,15 @@ interface LobbyProps extends WithStyles<typeof styles>{
   nickname: string,
   updateNickname: (nickname: string) => void,
   onJoinRoomRequest: () => void,
+  onClick?: () => void;
+  loadQuestion?: (question: QuestionDTO) => void;
+  onChangeAnswer?: (newValue: boolean) => void;
+  onChangeQuestion?: (newQuestion: number) => void;
+  title?: string;
+  subtitle?: string;
+  footer?: string;
+  currentPage?: number;
+  answerGived?: string;
 }
 
 class LobbyComponentInner extends React.Component<LobbyProps> {
@@ -43,13 +53,34 @@ class LobbyComponentInner extends React.Component<LobbyProps> {
           <LobbyHeaderComponent />
           <CardContent className={this.props.classes.cardContent}>
             <Typography variant="subheading">
-              Select Room:
+            Welcome to the trivia challenge!
             </Typography>
-            <RoomListComponent
+        {/*     <RoomListComponent
               rooms={this.props.rooms}
               selectedRoom={this.props.selectedRoom}
               onSelectedRoomChange={this.handleSelectedRoomChange}
-            />
+            /> */}
+             <Typography 
+                        gutterBottom variant="headline" component="h2">
+                        test
+                        {this.props.title
+                        }
+                    </Typography>
+
+                    <Typography 
+                        variant="headline"
+                        component="h2">
+                        test2
+                        {this.props.subtitle}
+                    </Typography>
+
+                    <Typography
+                        variant="headline"
+                        component="h2">
+                        test23
+                        {this.props.footer}
+
+                    </Typography>
           </CardContent>
           <CardActions className={this.props.classes.cardActions}>
             <LobbyActionsComponent
@@ -66,3 +97,9 @@ class LobbyComponentInner extends React.Component<LobbyProps> {
 }
 
 export const LobbyComponent = withStyles(styles)<LobbyProps>(LobbyComponentInner);
+
+export const createInitialCardContent = (): CardContentDTO =>({ 
+  title: 'Welcome to the trivia challenge!',
+  subtitle: 'You will be presented with 10 True or False questions.',
+  footer: 'Can you score 100 %?',
+});

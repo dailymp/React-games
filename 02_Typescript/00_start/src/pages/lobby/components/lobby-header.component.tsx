@@ -15,7 +15,7 @@ const LobbyHeaderComponentInner: React.StatelessComponent<LobbyHeaderProps> = (p
       variant="display3"
     >
       <HomeIcon className={props.classes.icon}/>
-      Lobby
+      React Trivia
     </Typography>
   </div>
 
