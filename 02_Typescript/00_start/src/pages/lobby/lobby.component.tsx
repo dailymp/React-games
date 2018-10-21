@@ -33,7 +33,7 @@ interface LobbyProps extends WithStyles<typeof styles>{
   answerGived?: string;
 }
 
-class LobbyComponentInner extends React.Component<LobbyProps> {
+class LobbyComponentInner extends React.Component<LobbyProps>  {
   public componentDidMount() {
     this.props.updateRooms();
   }
@@ -52,7 +52,9 @@ class LobbyComponentInner extends React.Component<LobbyProps> {
         <Card className={this.props.classes.card}>
           <LobbyHeaderComponent />
           <CardContent className={this.props.classes.cardContent}>
-            <Typography variant="subheading">
+            <Typography 
+            className = {this.props.classes.title}
+            variant="display1">
             Welcome to the trivia challenge!
             </Typography>
         {/*     <RoomListComponent

@@ -10,6 +10,7 @@ export default (theme: Theme) => createStyles({
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.primary.main,
   },
+  
   icon: {
     width: '3rem',
     height: '3rem',

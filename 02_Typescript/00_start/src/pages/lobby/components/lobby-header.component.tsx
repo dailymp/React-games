@@ -10,13 +10,13 @@ interface LobbyHeaderProps extends WithStyles<typeof styles> {
 
 const LobbyHeaderComponentInner: React.StatelessComponent<LobbyHeaderProps> = (props) =>
   <div className={props.classes.container}>
-    <Typography
+   {/*  <Typography
       className={props.classes.title}
-      variant="display3"
+      variant="display1"
     >
-      <HomeIcon className={props.classes.icon}/>
-      React Trivia
-    </Typography>
+     {/*  <HomeIcon className={props.classes.icon}/> 
+     Welcome to the trivia challenge!
+    </Typography>*/} 
   </div>
 
 export const LobbyHeaderComponent = withStyles(styles)<LobbyHeaderProps>(LobbyHeaderComponentInner);
