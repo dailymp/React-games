@@ -1,1 +1,1 @@
-# redux-typescript-react-games
+# react-redux-typescript-games
