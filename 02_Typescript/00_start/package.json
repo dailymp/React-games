@@ -11,7 +11,7 @@
     "build:dev": "rimraf dist && webpack --config webpack.dev.js",
     "build:prod": "rimraf dist && webpack -p --config webpack.prod.js"
   },
-  "author": "",
+  "author": "Daily Miranda Pardo",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.4.13",

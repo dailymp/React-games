@@ -7,21 +7,14 @@ import Typography from '@material-ui/core/Typography';
 import { CardLayout } from '../../common';
 import {
   LobbyActionsComponent,
-  LobbyHeaderComponent,
-  RoomListComponent
+  LobbyHeaderComponent
 } from './components';
 import styles from './lobby.styles';
 import { CardContentDTO, QuestionDTO } from '../../api/model';
 
 
 interface LobbyProps extends WithStyles<typeof styles>{
-  rooms: string[],
-  updateRooms: () => void,
-  selectedRoom: string,
-  updateSelectedRoom: (room: string) => void,
-  nickname: string,
-  updateNickname: (nickname: string) => void,
-  onJoinRoomRequest: () => void,
+ 
   onClick?: () => void;
   loadQuestion?: (question: QuestionDTO) => void;
   onChangeAnswer?: (newValue: boolean) => void;
@@ -34,17 +27,8 @@ interface LobbyProps extends WithStyles<typeof styles>{
 }
 
 class LobbyComponentInner extends React.Component<LobbyProps>  {
-  public componentDidMount() {
-    this.props.updateRooms();
-  }
 
-  private handleNicknameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.props.updateNickname(e.target.value);
-  }
 
-  private handleSelectedRoomChange = (room: string) => {
-    this.props.updateSelectedRoom(room);
-  }
 
   public render() {
     return (
@@ -85,12 +69,12 @@ class LobbyComponentInner extends React.Component<LobbyProps>  {
                     </Typography>
           </CardContent>
           <CardActions className={this.props.classes.cardActions}>
-            <LobbyActionsComponent
+       {/*      <LobbyActionsComponent
               nickname={this.props.nickname}
               selectedRoom={this.props.selectedRoom}
               onJoinRoomRequest={this.props.onJoinRoomRequest}
               onNicknameChange={this.handleNicknameChange}
-            />
+            /> */}
           </CardActions>
         </Card>
       </CardLayout>
